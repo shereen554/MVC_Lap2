@@ -1,0 +1,38 @@
+﻿@using MVC_Lap2.Models;
+
+@{
+    ViewData["Title"] = "Index";
+    int index = 1;
+}
+
+<hr />
+<a href="/Employee/NewForm">Add New Student</a>
+<hr />
+
+<table>
+   <tr>
+       <td>     </td>
+       <td>Name</td>
+        <td>Age</td>
+        <td>Address</td>
+        <td>Salary</td>
+        <td>Email</td>
+        <td>Password</td>
+   </tr>
+    @foreach (Employee emp in Model)
+    {
+        <tr>
+            <td>@(index++)</td>
+            <td>@emp.name</td>
+            <td>@emp.age</td>
+            <td>@emp.address</td>
+            <td>@emp.salary</td>
+            <td>@emp.email</td>
+            <td>
+            <a href="/Employee/Details/@emp.id">Details</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
